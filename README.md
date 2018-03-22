@@ -6,7 +6,7 @@
   - this script will check to see if you already have a *setup.ini* file.  If not, a sample one will be created
   - Edit the setup.ini file and make sure to:
    list your AWS EC2 instances (**one** instance-id per line)
-   create an API key in your Cloud Manager projects security section and past that value in here
+  - create an API key in your Cloud Manager projects security section and past that value in *setup.ini*.
 3. Sign into Cloud Manager UI and:
   - Create a new project
   - Build a new Deployment (Build New button)
