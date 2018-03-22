@@ -10,8 +10,8 @@
 3. Sign into Cloud Manager UI and:
   - Create a new project
   - Build a new Deployment (Build New button)
-- select "Deploy in other remote"
-  - select "Create Replica Set"
+   select "Deploy in other remote"
+   select "Create Replica Set"
 1. You should now be at the "Provide details for your replica set" page.  Enter the values.
   - Enter (or copy) the Replica Set Name into the replicaSetName value in setup.ini
   - The number of Nodes should match the number of instance-ids in the file
