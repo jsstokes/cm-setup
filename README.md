@@ -7,6 +7,7 @@ The *setup.py* script provides three things:
 - *stop-instances* - will stop all the EC2 instances
 - *terminate-instances* - will terminate all the EC2 instances
 - "ssh-n" - simply starts ssh specifying the ec2-user and the public DNS name  
+  one ssh script for each instance, number 1 to n   
   **use** ```ssh-add my-key-file.pem``` **to add the PEM key or the ssh-n scripts will not work**
 
 **Note** 
