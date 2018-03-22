@@ -12,15 +12,15 @@
   - Build a new Deployment (Build New button)
    select "Deploy in other remote"
    select "Create Replica Set"
-1. You should now be at the "Provide details for your replica set" page.  Enter the values.
+4. You should now be at the "Provide details for your replica set" page.  Enter the values.
   - Enter (or copy) the Replica Set Name into the replicaSetName value in setup.ini
   - The number of Nodes should match the number of instance-ids in the file
   - Do not change the Data Dairectory Prefix - for now the ansible script will always assume /data
     - FYI - the /data directory will be created by the ansible script with the proper permissions in each EC2 instance
-4. On the next page, choose whether or not you want backups.  
+5. On the next page, choose whether or not you want backups.  
   - Your selection has no bearing on the anisble scripts
-5. You should finally be at the "Install an Automation Agent on each server" page.  Select the "RHEL/CentOS (5.x, 6.x). SUSE11, Amazon Linux - RPM" option in the "Install Agent" dropdown for the first server.
-6. You should receive a pop-up that shows you the mmsGroup that you will need to copy into the set.ini file
+6. You should finally be at the "Install an Automation Agent on each server" page.  Select the "RHEL/CentOS (5.x, 6.x). SUSE11, Amazon Linux - RPM" option in the "Install Agent" dropdown for the first server.
+7. You should receive a pop-up that shows you the mmsGroup that you will need to copy into the set.ini file
 
 
 
