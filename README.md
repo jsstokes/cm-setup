@@ -17,7 +17,7 @@ The *setup.py* script is able to generate the start, stop, and terminate scripts
 1. Change to the cm-setup directory and run *setup.py*
   - this script will check to see if you already have a *setup.ini* file.  If not, a sample one will be created
   - Edit the setup.ini file and make sure to:
-   list your AWS EC2 instances (**one** instance-id per line, all by itself)
+   list your AWS EC2 instances (**one** instance-id per line, all by itself)  
    **Remember** There should be **NO** # at the beginning of the line - those are treated as comments
   - create an API key in your Cloud Manager project's security section and paste that value in *setup.ini*.
 3. Sign into Cloud Manager UI and:
