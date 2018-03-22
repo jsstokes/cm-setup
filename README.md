@@ -7,7 +7,7 @@ The *setup.py* script provides three things:
 - *stop-instances* - will stop all the EC2 instances
 - *terminate-instances* - will terminate all the EC2 instances
 - "ssh-n" - simply starts ssh specifying the ec2-user and the public DNS name  
-  **use ```ssh-add my-key-file.pem``` to add the PEM key or the ssh-n scripts will not work**
+  **use** ```ssh-add my-key-file.pem``` **to add the PEM key or the ssh-n scripts will not work**
 
 **Note** 
 The *setup.py* script is able to generate the start, stop, and terminate scripts regardless of the current state of the instances.  However, to properly generate the *hosts* file, all instances must be currently running.  This is because the public DNS names can only be obtained after an instance is started.
