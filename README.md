@@ -7,7 +7,8 @@ The *setup.py* script provides three things:
 - *stop-instances* - will stop all the EC2 instances
 - *terminate-instances* - will terminate all the EC2 instances
 
-**Note** The *setup.py* script is able to generate the start, stop, and terminate scripts regardless of the current state of the instance.  However, to properly generate the *hosts* file, all instance must be currently running.  This is because the public DNS names can only be obtained after an instance is started.
+**Note** 
+The *setup.py* script is able to generate the start, stop, and terminate scripts regardless of the current state of the instances.  However, to properly generate the *hosts* file, all instance must be currently running.  This is because the public DNS names can only be obtained after an instance is started.
   
 
 ## Setup
