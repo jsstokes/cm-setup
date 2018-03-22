@@ -21,7 +21,7 @@
   - Your selection has no bearing on the anisble scripts
 6. You should finally be at the "Install an Automation Agent on each server" page.  
    
-   Select the "RHEL/CentOS (5.x, 6.x). SUSE11, Amazon Linux - RPM" option in the "Install Agent" dropdown for the first server.
+   Select the "*RHEL/CentOS (5.x, 6.x). SUSE11, Amazon Linux - RPM*" option from the "*Install Agent*" dropdown for the first server.
 7. You should receive a pop-up that shows you the mmsGroup that you will need to copy into the set.ini file
 
 
