@@ -1,4 +1,14 @@
 # cm-setup
+The *setup.py* script provides three things:
+1. Creates an empty *setup.ini* which will be needed for the next steps
+2. Generates a proper *hosts* file for use with the included Ansible playbook script
+3. A few helper scripts
+- *start-instances* - will start all the EC2 instances
+- *stop-instances* - will stop all the EC2 instances
+- *terminate-instances* - will terminate all the EC2 instances
+
+**Note** The *setup.py* script is able to generate the start, stop, and terminate scripts regardless of the current state of the instance.  However, to properly generate the *hosts* file, all instance must be currently running.  This is because the public DNS names can only be obtained after an instance is started.
+  
 
 ## Setup
 1. Make a clone of this repository using git clone xxxxx where xxx is the URL for this repository
