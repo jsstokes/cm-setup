@@ -1,7 +1,7 @@
 ---
 #===============================================================================
-# Scripts to deploy and configure the MongoDB Automation 
-# agent and demo scripts
+# Ansible script to deploy and configure the MongoDB Automation 
+# agent and demo scripts for Cloud Manager
 # 
 #  -----------------------------------------------------------------------------
 #  Tags:
@@ -41,7 +41,7 @@
     lineinfile:
       path: /etc/mongodb-mms/automation-agent.config
       regexp: '^mmsGroupId='
-      line: 'mmsGroupId={{ mmsGroupId }}'
+      line: 'mmsGroupId={{ mmsgroupid }}'
     tags:
       - configuration
 
@@ -54,6 +54,11 @@
       line: 'mmsApiKey={{ api_key }}'
     tags:
       - configuration
+
+  - name: Start the automation agent
+    become: true
+    become_user: root
+    shell: service mongodb-mms-automation-agent start
 
   - name: Create the scripts
     template: 

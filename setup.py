@@ -18,7 +18,7 @@ output_file_name = "hosts"
 if os.path.exists("setup.ini") == False:
     outfile = open("setup.ini","w")
     sample = ConfigParser.ConfigParser(allow_no_value=True)
-    sample.optionxform = str
+    sample.optionxform(str())
     outfile.write("# ------------------------------------------------------------------------------\n")
     outfile.write("#  setup.ini\n")
     outfile.write("# ---------\n")
@@ -146,6 +146,15 @@ out_file.close()
 #
 # scripts will be named "ssh-x" where x is 1 - number of instances
 #
+
+# terminate/destroy all instances script
+stop_file = open("mongo-shell","w")
+stop_file.write("mongo --host " + conn_string + "\n")
+stop_file.close()
+
+
+# Set the helpers to be executable
+os.chmod("mongo-shell", stat.S_IRWXU)
 count = 0
 for host in dns_names:
     count += 1
