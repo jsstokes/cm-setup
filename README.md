@@ -3,9 +3,9 @@ The *setup.py* script provides three things:
 1. Creates an empty *setup.ini* which will be needed for the next steps
 2. Generates a proper *hosts* file for use with the included Ansible playbook script
 3. A few helper scripts
-- *start-instances* - will start all the EC2 instances
-- *stop-instances* - will stop all the EC2 instances
-- *terminate-instances* - will terminate all the EC2 instances
+- ```start-instances``` - will start all the EC2 instances
+- ```stop-instances``` - will stop all the EC2 instances
+- ```terminate-instances``` - will terminate all the EC2 instances
 - "ssh-n" - simply starts ssh specifying the ec2-user and the public DNS name  
   one ssh script for each instance, numbered 1 to the number of instances specified   
   **use** ```ssh-add my-key-file.pem``` **to add the PEM key or the ssh-n scripts will not work**
