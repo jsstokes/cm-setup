@@ -1,0 +1,80 @@
+---
+#===============================================================================
+# Scripts to deploy and configure the MongoDB Automation 
+# agent and demo scripts
+# 
+#  -----------------------------------------------------------------------------
+#  Tags:
+#     configuration - creates/updates the configuration files for agent(s)
+#     data - creates/updates the scripts and demo data
+# 
+# 
+#===============================================================================
+
+- hosts: demo
+  tasks:
+  - name: upgrade all packages
+    become: true
+    become_user: root
+    yum: name=* state=latest
+
+  - name: Get Mongo Automation Agent
+    shell: curl -OL https://cloud.mongodb.com/download/agent/automation/mongodb-mms-automation-agent-manager-4.9.1.2502-1.x86_64.rpm
+
+  - name: Install the automation agent
+    become: true
+    become_user: root
+    shell: rpm -U mongodb-mms-automation-agent-manager-4.9.1.2502-1.x86_64.rpm
+
+  - name: Create the data directory and set owner
+    become: true
+    become_user: root
+    file:
+      path: /data
+      state: directory
+      owner: mongod
+      group: mongod
+
+  - name: Update the mmsGroupID in the config file
+    become: true
+    become_user: root
+    lineinfile:
+      path: /etc/mongodb-mms/automation-agent.config
+      regexp: '^mmsGroupId='
+      line: 'mmsGroupId={{ mmsGroupId }}'
+    tags:
+      - configuration
+
+  - name: Update the API Key
+    become: true
+    become_user: root
+    lineinfile:
+      path: /etc/mongodb-mms/automation-agent.config
+      regexp: '^mmsApiKey='
+      line: 'mmsApiKey={{ api_key }}'
+    tags:
+      - configuration
+
+  - name: Create the scripts
+    template: 
+      src: setup-scenario1.sh.j2
+      dest: /home/ec2-user/setup-scenario1.sh
+      mode: a+x
+    tags:
+      - data
+      - scripts
+
+  - name: Upload and unzip the Campaign data
+    unarchive:
+      src: campaign_data.zip
+      dest: /home/ec2-user
+    tags:
+      - data
+
+  - name: Upload and unzip the remaining demos scripts
+    unarchive:
+      src: demo_scripts.zip
+      dest: /home/ec2-user
+    tags:
+      - data
+
