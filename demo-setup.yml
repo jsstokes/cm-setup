@@ -59,27 +59,3 @@
     become: true
     become_user: root
     shell: service mongodb-mms-automation-agent start
-
-  - name: Create the scripts
-    template: 
-      src: setup-scenario1.sh.j2
-      dest: /home/ec2-user/setup-scenario1.sh
-      mode: a+x
-    tags:
-      - data
-      - scripts
-
-  - name: Upload and unzip the Campaign data
-    unarchive:
-      src: campaign_data.zip
-      dest: /home/ec2-user
-    tags:
-      - data
-
-  - name: Upload and unzip the remaining demos scripts
-    unarchive:
-      src: demo_scripts.zip
-      dest: /home/ec2-user
-    tags:
-      - data
-
