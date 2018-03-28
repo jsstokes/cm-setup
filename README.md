@@ -8,6 +8,8 @@ The *setup.py* script provides three things:
 - ```terminate-instances``` - will terminate all the EC2 instances
 - "ssh-n" - simply starts ssh specifying the ec2-user and the public DNS name  
   one ssh script for each instance, numbered 1 to the number of instances specified   
+- "scp-n" - scripts to scp a file to the instance "n"  
+  ```scp-1 myfile.txt``` - would copy the file "myfile.txt" to the ec2-user home folder on instance 1
   **use** ```ssh-add my-key-file.pem``` **to add the PEM key or the ssh-n scripts will not work**
 
 **Note** 
