@@ -9,8 +9,9 @@ The *setup.py* script provides three things:
 - "ssh-n" - simply starts ssh specifying the ec2-user and the public DNS name  
   one ssh script for each instance, numbered 1 to the number of instances specified   
 - "scp-n" - scripts to scp a file to the instance "n"  
-  ```scp-1 myfile.txt``` - would copy the file "myfile.txt" to the ec2-user home folder on instance 1
-  **use** ```ssh-add my-key-file.pem``` **to add the PEM key or the ssh-n scripts will not work**
+  ```scp-1 myfile.txt``` - would copy the file "myfile.txt" to the ec2-user home folder on instance 1  
+  
+  **use** ```ssh-add my-key-file.pem``` **to add the PEM key or the ssh-n/scp-n scripts will not work**
 
 **Note** 
 The *setup.py* script is able to generate the start, stop, and terminate scripts regardless of the current state of the instances.  However, to properly generate the *hosts* file, all instances must be currently running.  This is because the public DNS names can only be obtained after an instance is started.
