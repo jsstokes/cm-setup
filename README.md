@@ -16,6 +16,12 @@ The *setup.py* script provides three things:
 **Note** 
 The *setup.py* script is able to generate the start, stop, and terminate scripts regardless of the current state of the instances.  However, to properly generate the *hosts* file, all instances must be currently running.  This is because the public DNS names can only be obtained after an instance is started.
   
+## Prerequisites
+**AWS CLI** - must be installed and properly configured.  Installation instructions can be found at https://docs.aws.amazon.com/cli/latest/userguide/installing.html
+
+**boto3 python library** - required for the python scripts to communicate with AWS.  See the instuctions on the github site for this project - https://github.com/boto/boto3
+
+**Ansible** - Ansible should be installed - see http://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html  
 
 ## Initial Setup
 1. Make a clone of this repository 
