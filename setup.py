@@ -165,3 +165,13 @@ for host in dns_names:
     os.chmod(filename, stat.S_IRWXU)
 
 
+count = 0
+for host in dns_names:
+    count += 1
+    filename = "scp-" + str(count)
+    my_file = open(filename, "w")
+    my_file.write("scp $1 ec2-user@" + host + ":$1\n")
+    my_file.close()
+    os.chmod(filename, stat.S_IRWXU)
+
+
